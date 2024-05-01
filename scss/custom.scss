@@ -1,0 +1,15 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Your variable overrides
+$body-color: #c5d9d8;
+$primary: #c5d9d9;
+$secondary: #679485;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
