@@ -1,6 +1,6 @@
 {
   "name": "schoolinker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "schoolinker for school",
   "main": "main.js",
   "scripts": {
@@ -53,7 +53,7 @@
   "author": "neohum",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^29.3.0",
+    "electron": "^29.4.2",
     "electron-builder": "^24.13.3"
   },
   "dependencies": {
