@@ -31,6 +31,12 @@ const createWindow = () => {
 ipcMain.on('saveData', (event, data) => {
   let fs = require('fs');
   console.log(data);
+  if (fs.existsSync('school_uid.txt')) {
+    fs.unlink('school_uid.txt', (err) => {
+      if (err) throw err;
+      console.log('File deleted!');
+    });
+  }
   fs.writeFile('school_uid.txt', data, (err) => {
     if (err) throw err;
     console.log('Data saved');
