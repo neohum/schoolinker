@@ -1,6 +1,6 @@
 {
   "name": "schoolinker",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "schoolinker for school",
   "main": "main.js",
   "scripts": {
@@ -59,6 +59,7 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "macaddress": "^0.5.3"
   }
 }
