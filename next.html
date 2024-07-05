@@ -59,16 +59,25 @@
                         <h2>SchoolWork's <span>SchooLinker</span> <p></p>모든 것을 연결하다.</h2>
                         
                         <div class="button-area">
-                            <a class="btn btn-warning" id="linker_make" target="_blank"  type="button" >링커입력 서비스(입력용)</a>
+                            <a class="btn btn-warning" id="linker_make" target="_blank" onclick="openLinkerTest()"  type="button" >링커입력 서비스(입력용)</a>
                              <br>
                              <br>
                             
-                            <a class="btn btn-warning" id="linker_test"  target="_blank"  type="button" >링커뷰어 서비스(보기용)</a>
+                            <a class="btn btn-warning" id="linker_test"  target="_blank" onclick="openLinkerMake()"  type="button" >링커뷰어 서비스(보기용)</a>
                              <br>
                              <br>
                             
-                            <a class="btn btn-warning" href="https://neohum775.mycafe24.com/" target="_blank"  type="button">수업용 링커 서비스</a>
-
+                            <a class="btn btn-warning" id="linker" target="_blank" onclick="openLink()"  type="button">수업용 링커 서비스</a>
+                              <br>
+                              <br>
+                              <span>컴퓨터 정보 보기</span> 
+                              <br>
+                              <br>
+                              <span id="ipv4"></span>
+                              <br>
+                              <span id="memory"></span>
+                              <br>
+                              <span id="hostname"></span>
                         </div>
                     </div>
                 </div>
