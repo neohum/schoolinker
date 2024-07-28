@@ -1,6 +1,6 @@
 {
   "name": "schoolinker",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "schoolinker for school",
   "main": "main.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "build": {
     "productName": "schoolinker",
-    "appId": "net.jetalab.ex.startelectron",
+    "appId": "kr.schoolinker",
     "asar": true,
     "mac": {
       "target": [
@@ -59,7 +59,10 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "electron-log": "^5.1.7",
+    "electron-updater": "^6.2.1",
     "jquery": "^3.7.1",
-    "macaddress": "^0.5.3"
+    "macaddress": "^0.5.3",
+    "update-electron-app": "^3.0.0"
   }
 }
