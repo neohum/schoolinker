@@ -1,6 +1,6 @@
 {
   "name": "schoolinker",
-  "version": "1.4.0",
+  "version": "1.4.3",
   "description": "schoolinker for school",
   "main": "main.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "build:win": "npm run build:win32 && npm run build:win64",
     "build:win32": "electron-builder --win portable --ia32",
     "build:win64": "electron-builder --win portable --x64",
-    "deploy:win64": "electron-builder --win nsis:x64"
+    "deploy:win64": "electron-builder build --win nsis:x64"
   },
   "build": {
     "productName": "schoolinker",
@@ -39,6 +39,17 @@
       ],
       "icon": "resources/icon.ico"
     },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "neohum",
+        "channel": "latest",
+        "releaseType": "release",
+        "repo": "schoolinker_update",
+        "publishAutoUpdate": true
+      }
+    ],
+  
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,

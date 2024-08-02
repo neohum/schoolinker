@@ -4,46 +4,6 @@ let fs = require('fs');
 const { autoUpdater } = require('electron-updater');
 
 
-const server = 'https://github.com/neohum/schoolinker/releases/tag/'
-const url = `${server}/${app.getVersion()}`
-let updateInterval = null;
-
-setInterval(() => {
-  autoUpdater.checkForUpdates()
-}, 6000)
-
-autoUpdater.on('update-avilable', (_event, releaseNotes, releaseName) => {
-  const dialogOpts = {
-    type: 'info',
-    buttons: ['Ok'],
-    title: 'Update Available',
-    message: process.platform === 'win64' ? releaseNotes : releaseName,
-    detail:
-      'A new version download started. The app will be restarted to install the update.'
-  }
-
-  dialog.showMessageBox(dialogOpts);
-  
-  updateInterval = null;
-})
-
-
-autoUpdater.on('update-downloaded', (_event, releaseNotes, releaseName) => {
-   const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title:'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-   };
-   dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) autoUpdater.quitAndInstall()
-   });
-});
-autoUpdater.on('error', (message) => {
-  console.error('There was a problem updating the application')
-  console.error(message)
-})
 
 
 const createWindow = () => {
@@ -133,14 +93,12 @@ autoUpdater.on('update-downloaded', (info) => {
 app.whenReady().then(() => {
   createWindow()
 
-  autoUpdater.checkoForUpdates()
+  autoUpdater.checkForUpdates()
 
-  updateInterval = setInterval(() => autoUpdater.checkForUpdates(), 600000);
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow()
-      autoUpdater.checkoForUpdates()
 
     }
   })
