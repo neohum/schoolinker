@@ -60,6 +60,16 @@ h6 {
   color: #162447;
 }
 
+.inputforserial{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
   -webkit-transition-duration: 500ms;

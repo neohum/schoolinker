@@ -2,29 +2,30 @@ const { app, BrowserWindow, ipcMain,  dialog } = require('electron/main')
 const log = require('electron-log')
 let fs = require('fs');
 const { autoUpdater } = require('electron-updater');
+const { ipcRenderer } = require('electron');
 
 
 
 
 const createWindow = () => {
   if (fs.existsSync('school_uid.txt')) {
-    const win = new BrowserWindow({
+    const win2 = new BrowserWindow({
       width: 400,
-      height: 798,
-      frame: false,
+      height: 833,
+      frame: true,
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
       }
     })
 
-    win.loadFile('next.html')
+    win2.loadFile('next.html')
     return;
   }
   const win = new BrowserWindow({
     width: 400,
-    height: 798,
-    frame: false,
+    height: 833,
+    frame: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -32,8 +33,8 @@ const createWindow = () => {
   })
 
   win.loadFile('index.html')
+  document.getElementById("saveBtn").addEventListener("click", closeApp);
 }
-
 ipcMain.on('saveData', (event, data) => {
   let fs = require('fs');
   console.log(data);
@@ -46,12 +47,13 @@ ipcMain.on('saveData', (event, data) => {
   fs.writeFile('school_uid.txt', data, (err) => {
     if (err) throw err;
     console.log('Data saved');
+    
   });
 
   const win = new BrowserWindow({
     width: 400,
-    height: 798,
-    frame: false,
+    height: 833,
+    frame: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
