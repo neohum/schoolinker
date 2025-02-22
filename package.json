@@ -5,7 +5,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neohum/schoolinker.git"
+    "url": "git+https://github.com/neohum/schoolinker_update.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,7 +17,7 @@
     "build:win": "npm run build:win32 && npm run build:win64",
     "build:win32": "electron-builder --win portable --ia32",
     "build:win64": "electron-builder --win portable --x64",
-    "deploy:win64": "electron-builder build --win nsis:x64"
+    "deploy:win64": "electron-builder build --win --publish always"
   },
   "build": {
     "productName": "schoolinker",
